@@ -9,7 +9,6 @@
 		"importHelpers": true,
 		"incremental": true,
 		"isolatedModules": false,
-		// "jsx": "preserve",
 		"lib": [
 			"ES2020",
 			"DOM"
@@ -17,11 +16,8 @@
 		"module": "CommonJS",
 		"noEmit": false,
 		"outDir": "dist",
-		// "outFile": "",
 		"plugins": [],
 		"removeComments": false,
-		// "rootDir": "",
-		// "sourceMap": true,
 		"target": "ES2020",
 		"tsBuildInfoFile": "dist/.tsbuildinfo",
 		"alwaysStrict": true,
@@ -34,19 +30,12 @@
 		"strictPropertyInitialization": true,
 		"allowSyntheticDefaultImports": true,
 		"allowUmdGlobalAccess": false,
-		// "baseUrl": "./src",
 		"esModuleInterop": true,
 		"moduleResolution": "Node",
-		// "paths": {},
 		"preserveSymlinks": false,
 		"rootDirs": [],
-		// "typeRoots": [
-		//  	"./node_modules/@types"
-		// ],
-		// "types": [],
 		"inlineSourceMap": true,
 		"inlineSources": true,
-		// "mapRoot": "./dist",
 		"sourceRoot": "./src",
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitReturns": true,
@@ -67,8 +56,6 @@
 		"extendedDiagnostics": true,
 		"forceConsistentCasingInFileNames": true,
 		"importsNotUsedAsValues": "error",
-		// "jsxFactory": "React.createElement",
-		// "jsxFragmentFactory": "React.Fragment",
 		"listEmittedFiles": true,
 		"listFiles": true,
 		"maxNodeModuleJsDepth": 0,
@@ -80,7 +67,6 @@
 		"noResolve": false,
 		"noStrictGenericChecks": false,
 		"preserveConstEnums": true,
-		// "reactNamespace": "",
 		"resolveJsonModule": false,
 		"skipDefaultLibCheck": false,
 		"skipLibCheck": false,
@@ -90,7 +76,7 @@
 		"traceResolution": true,
 		"useDefineForClassFields": false,
 		"preserveWatchOutput": false,
-		"pretty": true
+		"pretty": true,
 	},
 	"include": [
 		"src/**/*.ts"
