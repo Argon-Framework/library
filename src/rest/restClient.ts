@@ -117,12 +117,12 @@ export class RestClient {
 		// @ts-ignore
 		if(res.message && res.message === 'Cancel') {
 			if(options.retires >= this._client.options.rest?.maxRetries!) {
-				this._client.logger.error(`Request timed out for "(${options.method.toUpperCase()}) ${options.path}" however the max retries has reached. Aborting request...`);
+				this._client.logger.error(`Request timed out for "(${options.method?.toUpperCase()}) ${options.path}" however the max retries has reached. Aborting request...`);
 				if(this._client.options.rest?.exitOnError) return process.exit(1);
-				else throw new Error(`Max Retires reached for request "(${options.method.toUpperCase()}) ${options.path}"`);
+				else throw new Error(`Max Retires reached for request "(${options.method?.toUpperCase()}) ${options.path}"`);
 			}
 
-			this._client.logger.warning(`Request timed out for "(${options.method.toUpperCase()}) ${options.path}"... Retrying request (${options.retires + 1})`);
+			this._client.logger.warning(`Request timed out for "(${options.method?.toUpperCase()}) ${options.path}"... Retrying request (${options.retires + 1})`);
 
 			options.retires++;
 
@@ -131,13 +131,13 @@ export class RestClient {
 		const retryAfter = res.headers['x-ratelimit-reset-after'];
 
 		if (res.headers['x-ratelimit-global']) {
-			this._client.logger.critical(`Global Ratelimit hit for "(${options.method.toUpperCase()}) ${options.path}"! Retrying request in ${res.headers['x-ratelimit-global']} seconds`);
+			this._client.logger.critical(`Global Ratelimit hit for "(${options.method?.toUpperCase()}) ${options.path}"! Retrying request in ${res.headers['x-ratelimit-global']} seconds`);
 			await sleep(res.headers['x-ratelimit-global'] * 1000);
 		}
 
 		if (res.status >= 400 && res.status < 500) {
 			if (res.status === 429) {
-				this._client.logger.warning(`Ratelimit hit for "(${options.method.toUpperCase()}) ${options.path}"... Retrying request in ${retryAfter} seconds`);
+				this._client.logger.warning(`Ratelimit hit for "(${options.method?.toUpperCase()}) ${options.path}"... Retrying request in ${retryAfter} seconds`);
 				await sleep(retryAfter * 1000);
 				return await this._request(options);
 			}
@@ -147,12 +147,12 @@ export class RestClient {
 
 		if (res.status >= 500 && res.status < 600) {
 			if(options.retires >= this._client.options.rest?.maxRetries!) {
-				this._client.logger.error(`A server-side error has occurred for request "(${options.method.toUpperCase()}) ${options.path}" however the max retries has reached. Aborting request...`);
+				this._client.logger.error(`A server-side error has occurred for request "(${options.method?.toUpperCase()}) ${options.path}" however the max retries has reached. Aborting request...`);
 				if(this._client.options.rest?.exitOnError) return process.exit(1);
-				else throw new Error(`Max Retires reached for request "(${options.method.toUpperCase()}) ${options.path}"`);
+				else throw new Error(`Max Retires reached for request "(${options.method?.toUpperCase()}) ${options.path}"`);
 			}
 
-			this._client.logger.warning(`A server-side error has occurred for request "(${options.method.toUpperCase()}) ${options.path}"... Retrying request (${options.retires + 1})`);
+			this._client.logger.warning(`A server-side error has occurred for request "(${options.method?.toUpperCase()}) ${options.path}"... Retrying request (${options.retires + 1})`);
 
 			options.retires++;
 
