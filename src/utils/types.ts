@@ -44,6 +44,20 @@ export interface RequestOptions {
 	requiresAuth?: boolean;
 	headers?: Record<string, unknown>;
 	data?: Record<string, unknown> | FormData;
-	method: Method;
+	method?: Method;
 	files?: File[];
+}
+
+export interface GETGateway {
+	url: string;
+}
+
+export interface GETGatewayBot extends GETGateway {
+	shards: number;
+	session_start_limit: {
+		total: number;
+		remaining: number;
+		reset_after: number;
+		max_concurrency: number;
+	}
 }

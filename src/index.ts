@@ -1,6 +1,7 @@
 export * from './client/client';
 
 export * from './rest/restClient';
+export * from './rest/restHelper';
 
 export * from './utils/constants';
 export * from './utils/logger';

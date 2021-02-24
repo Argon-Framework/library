@@ -12,7 +12,6 @@ import type { RequestOptions } from '../utils/types';
 export class RestClient {
 	private readonly _client: Client;
 	private readonly _queue: QueueObject<RequestOptions>;
-
 	private readonly _token: string;
 
 	public constructor(client: Client, token: string) {
