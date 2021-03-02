@@ -1,3 +1,5 @@
+import { GatewayEncoding } from './types';
+
 import type { ConstantsType } from './types';
 
 export const Constants: ConstantsType = {
@@ -20,6 +22,17 @@ export const Constants: ConstantsType = {
 				exitOnError: false,
 				restRequestTimeout: 3000,
 				maxRetries: 3,
+			},
+			ws: {
+				gatewayUrl: 'wss://gateway.discord.gg/',
+				gatewayVersion: 8,
+				compression: true,
+				encoding: GatewayEncoding.Json,
+			},
+			start: {
+				presence: undefined,
+				large_threshold: undefined,
+				intents: 0,
 			},
 		},
 	},

@@ -142,7 +142,7 @@ export class RestClient {
 				return await this._request(options);
 			}
 
-			// TODO: Handle other status codes
+			// TODO: Handle 404 error
 		}
 
 		if (res.status >= 500 && res.status < 600) {

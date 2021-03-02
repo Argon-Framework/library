@@ -76,7 +76,7 @@
 		"traceResolution": true,
 		"useDefineForClassFields": false,
 		"preserveWatchOutput": false,
-		"pretty": true,
+		"pretty": true
 	},
 	"include": [
 		"src/**/*.ts"

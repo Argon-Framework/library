@@ -8,3 +8,5 @@ export * from './utils/logger';
 export * from './utils/mergeDefault';
 export * from './utils/sleep';
 export * from './utils/types';
+
+export * from './websocket/websocketClient';
