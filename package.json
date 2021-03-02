@@ -41,7 +41,7 @@
 		"@types/ws": "^7.4.0",
 		"@typescript-eslint/eslint-plugin": "^4.15.2",
 		"@typescript-eslint/parser": "^4.15.2",
-		"eslint": "^7.20.0",
+		"eslint": "^7.21.0",
 		"eslint-formatter-pretty": "^4.0.0",
 		"husky": "^5.1.1",
 		"standard-version": "^9.1.1",
